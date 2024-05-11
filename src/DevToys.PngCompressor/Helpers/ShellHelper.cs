@@ -67,6 +67,10 @@ internal static class ShellHelper
         return new(process.ExitCode, error);
     }
 
+    /// <summary>
+    /// On macOS, files downloaded from the internet manually (through the web browser) are automatically put into quarantine, blocking command-line apps like PngQuant and OxiPng to be executed.
+    /// This method is a hack to bypass this restriction by adding execute permission and removing the specied file from quarantine.
+    /// </summary>
     private static async Task MitigateMacOSFileAccessRestrictionsAsync(string filePath, ILogger logger, CancellationToken cancellationToken)
     {
         Guard.IsTrue(OperatingSystem.IsMacOS() || OperatingSystem.IsMacCatalyst(), "This method is only supported on macOS.");
@@ -74,7 +78,6 @@ internal static class ShellHelper
 
         try
         {
-            // Add execute permission and remove the file from quarantine
             var bashProcessStartInfo = new ProcessStartInfo
             {
                 FileName = "/bin/bash",
