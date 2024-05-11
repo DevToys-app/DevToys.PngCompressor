@@ -9,7 +9,7 @@
     <Title>Png Compressor</Title>
     <Description>Compress PNG images up to 80%.</Description>
     <PackageProjectUrl>https://devtoys.app</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/DevToys-app/PngCompressor</RepositoryUrl>
+    <RepositoryUrl>https://github.com/DevToys-app/DevToys.PngCompressor</RepositoryUrl>
     <PackageTags>devtoys-app</PackageTags>
     <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
