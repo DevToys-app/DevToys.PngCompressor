@@ -1,0 +1,45 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>$(NetCore)</TargetFrameworks>
+
+    <!-- NuGet package -->
+    <Version>1.0.0-pre.0</Version>
+    <Authors>veler</Authors>
+    <Title>Png Compressor</Title>
+    <Description>Compress PNG images up to 80%.</Description>
+    <PackageProjectUrl>https://devtoys.app</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/DevToys-app/PngCompressor</RepositoryUrl>
+    <PackageTags>devtoys-app</PackageTags>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DevToys.Api" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="$(RepoRoot)LICENSE.md" Link="docs\LICENSE.md" Pack="true" PackagePath="\" />
+    <None Include="$(RepoRoot)README.md" Link="docs\README.md" Pack="true" PackagePath="\" />
+    <None Include="runtimes\**" Pack="true" PackagePath="\lib\$(NetCore)\runtimes\">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Strings\PngCompressor.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>PngCompressor.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Strings\PngCompressor.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>PngCompressor.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
