@@ -10,7 +10,7 @@
     "DevToys CLI": {
       "commandName": "Executable",
       "executablePath": "%DevToysCliDebugEntryPoint%",
-      "commandLineArgs": "pngc --input \"D:\\assets\" --mode Lossy",
+      "commandLineArgs": "",
       "environmentVariables": {
         "EXTRAPLUGIN": "$(TargetDir)"
       }

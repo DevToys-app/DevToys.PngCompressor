@@ -67,18 +67,18 @@ internal static class ShellHelper
         return new(process.ExitCode, error);
     }
 
-    private static async Task MitigateMacOSFileAccessRestrictionsAsync(string pngQuantPath, ILogger logger, CancellationToken cancellationToken)
+    private static async Task MitigateMacOSFileAccessRestrictionsAsync(string filePath, ILogger logger, CancellationToken cancellationToken)
     {
         Guard.IsTrue(OperatingSystem.IsMacOS() || OperatingSystem.IsMacCatalyst(), "This method is only supported on macOS.");
-        Guard.IsTrue(File.Exists(pngQuantPath), "pngquant executable not found.");
+        Guard.IsTrue(File.Exists(filePath), "file not found.");
 
         try
         {
-            // Add execute permission and remove pngquant from quarantine
+            // Add execute permission and remove the file from quarantine
             var bashProcessStartInfo = new ProcessStartInfo
             {
                 FileName = "/bin/bash",
-                Arguments = $"-c \"chmod +x '{pngQuantPath}'; xattr -d com.apple.quarantine '{pngQuantPath}'\"",
+                Arguments = $"-c \"chmod +x '{filePath}'; xattr -d com.apple.quarantine '{filePath}'\"",
                 RedirectStandardOutput = true,
                 RedirectStandardError = true,
                 UseShellExecute = false,
