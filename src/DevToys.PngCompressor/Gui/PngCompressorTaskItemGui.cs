@@ -190,6 +190,7 @@ internal sealed class PngCompressorTaskItemGui : IUIListItem
                     Button()
                         .Icon("FluentSystemIcons", '\uF34C')
                         .OnClick(OnDeleteButtonClickAsync));
+            _setting.Icon("FluentSystemIcons", default);
         }
         else
         {
@@ -205,6 +206,7 @@ internal sealed class PngCompressorTaskItemGui : IUIListItem
                         Button()
                             .Icon("FluentSystemIcons", '\uF34C')
                             .OnClick(OnDeleteButtonClickAsync));
+                _setting.Icon("FluentSystemIcons", '\uE5ED');
             }
             else
             {
@@ -241,6 +243,7 @@ internal sealed class PngCompressorTaskItemGui : IUIListItem
                                 Button()
                                     .Icon("FluentSystemIcons", '\uF34C')
                                     .OnClick(OnDeleteButtonClickAsync)));
+                _setting.Icon("FluentSystemIcons", '\uF294');
             }
         }
     }
