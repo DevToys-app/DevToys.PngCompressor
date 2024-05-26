@@ -1,0 +1,5 @@
+<Project>
+  <ItemGroup>
+    <PackageVersion Include="DevToys.Api" Version="2.0.0-pre.2" />
+  </ItemGroup>
+</Project>
