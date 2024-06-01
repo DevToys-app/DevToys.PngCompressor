@@ -4,7 +4,7 @@ A PNG compressor for [DevToys](https://devtoys.app) that uses [PNGQuant](https:/
 
 ## License
 
-This extension is licensed under the GPL License - see the [LICENSE](LICENSE) file for details.
+This extension is licensed under the GPL License - see the [LICENSE](LICENSE.md) file for details.
 
 ## Installation
 
